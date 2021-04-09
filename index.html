@@ -31,7 +31,7 @@
           <h1>مَرْحَبًا يَا رَمَضَان</h1>
           <h2>Marhaban Ya Ramadhan</h2>
           <p>
-            <span class="typed" id="typed"></span>
+            <span class="typed"></span>
           </p>
         </header>
         <div class="containerparallax">
@@ -146,8 +146,8 @@
         document.title = titleText;
         setTimeout("titleMarquee()", 150);
       }
-      function typing(){
-      .typed({
+$(function(){
+	$(".typed").typed({
 		strings: ["Developers.", "Designers.", "People."],
 		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
 		stringsElement: null,
@@ -180,7 +180,8 @@
 		// callback for reset
 		resetCallback: function() {}
 	});
-      }
+});
+
     </script>
   </body>
 </html>
