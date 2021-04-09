@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section#welcome {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.isi {
+  color: white;
+  margin: 0;
+  padding: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.isi header.parallax {
+  box-sizing: border-box;
+  min-height: 100vh;
+  position: relative;
+  transform-style: inherit;
+  width: 100vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.isi header.parallax h1 {
+  font-weight: 800;
+  font-size: 5vh;
+  font-family: "Almara", sans-serif;
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  color: #fff1e3;
+  transform: translate(-50%, -50%);
+}
+
+.isi header.parallax h2 {
+  font-weight: 800;
+  font-size: 5vh;
+  margin: 0;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  color: #fff1e3;
+  transform: translate(-50%, -50%);
+}
+
+.isi header.parallax p {
+  margin: 0;
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.isi header.parallax,
+.isi header.parallax:before {
+  background: 50% 50% / cover;
+}
+
+.isi header.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: url(kubah.png);
+  background-size: cover;
+  transform-origin: center center 0;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+  min-height: 100vh;
+}
+
+section#welcome .isi .containerparallax {
+  z-index: 2;
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  line-height: 30px;
+  font-weight: lighter;
+  padding: 40px;
+  color: grey;
+}
+
+.cover {
+  position: fixed;
+}
+p.lisensi {
+  margin-top: 10px;
+  text-align: center;
+}
+p.lisensi a {
+  text-decoration: none;
+  color: rgb(0, 119, 255);
+}
+
+.fa-github,
+.fa-facebook-f,
+.fa-instagram {
+  font-size: 25px;
+  cursor: pointer;
+}
+.row.social .col-sm a {
+  text-decoration: none;
+  color: gray;
+}
+.fa-github:hover {
+  color: #24292e;
+}
+.fa-facebook-f:hover {
+  color: #4267b2;
+}
+.fa-instagram:hover {
+  color: #e1306c;
+}
+.card-title {
+  color: rgb(7, 204, 0);
+  font-weight: 700;
+}
+.card-text.language {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #24292e;
+}
+@media only screen and (max-width: 768px) {
+  .isi header.parallax h1 {
+    top: 45%;
+  }
+  .isi header.parallax h2 {
+    top: 55%;
+  }
+  .fa-github,
+  .fa-facebook-f,
+  .fa-instagram {
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .isi header.parallax h1 {
+    top: 30%;
+  }
+  .isi header.parallax h2 {
+    top: 45%;
+  }
+  .fa-github,
+  .fa-facebook-f,
+  .fa-instagram {
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .isi header.parallax h1 {
+    top: 30%;
+  }
+  .isi header.parallax h2 {
+    top: 45%;
+  }
+  .fa-github,
+  .fa-facebook-f,
+  .fa-instagram {
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
