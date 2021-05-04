@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact us</title>
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+    />
+    <!-- Default theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+      }
+      input,
+      textarea {
+        outline: none;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: #527db6;
+      }
+      h1 {
+        margin-top: 0;
+        font-weight: 500;
+      }
+      form {
+        position: relative;
+        width: 80%;
+        border-radius: 30px;
+        background: #fff;
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        border-radius: 20px;
+        background: #527db6;
+      }
+      .form-left-decoration {
+        bottom: 60px;
+        left: -30px;
+      }
+      .form-right-decoration {
+        top: 60px;
+        right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        border-radius: 30px;
+        background: #fff;
+      }
+      .form-left-decoration:before {
+        top: -20px;
+      }
+      .form-left-decoration:after {
+        top: 20px;
+        left: 10px;
+      }
+      .form-right-decoration:before {
+        top: -20px;
+        right: 0;
+      }
+      .form-right-decoration:after {
+        top: 20px;
+        right: 10px;
+      }
+      .circle {
+        position: absolute;
+        bottom: 80px;
+        left: -55px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .form-inner {
+        padding: 40px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 20px;
+        background: #d0dfe8;
+      }
+      .form-inner textarea {
+        resize: none;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        border-bottom: 4px solid #527db6;
+        background: #527db6;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        transition: 0.4s all ease-in-out;
+      }
+      button:hover {
+        background: #749dd3;
+        transition: 0.4s all ease-in-out;
+      }
+      @media (min-width: 568px) {
+        form {
+          width: 60%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/" class="decor" name="form-contact">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h1>Kedepan Buat Project Apa?</h1>
+        <h2>
+          entar gw buat klo bs dan sempet
+          <i
+            class="em em-smile"
+            aria-role="presentation"
+            aria-label="SMILING FACE WITH OPEN MOUTH"
+          ></i>
+        </h2>
+        <input type="text" placeholder="Nama" required name="nama" />
+        <input type="email" placeholder="Email" name="email" />
+        <textarea
+          placeholder="Pesan..."
+          rows="5"
+          required
+          name="pesan"
+        ></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwzq3Qk3tMXNozWleoLeyrkn7HeXKWsKq4r9w0W8HXB199JsSC_C7x_HDMJl2SrL-TM/exec";
+      const form = document.forms["form-contact"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            Swal.fire(
+              'Yeay <i class="em em-smiley" aria-role="presentation" aria-label="SMILING FACE WITH OPEN MOUTH"></i>',
+              "Pesanmu Sudah Terkirim",
+              "success"
+            );
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            Swal.fire(
+              'Yah <i class="em em-disappointed" aria-role="presentation" aria-label="DISAPPOINTED FACE"></i>',
+              "Pesanmu Sudah Terkirim",
+              "success"
+            );
+          });
+      });
+    </script>
+  </body>
+</html>
+<!-- https://script.google.com/macros/s/AKfycbwzq3Qk3tMXNozWleoLeyrkn7HeXKWsKq4r9w0W8HXB199JsSC_C7x_HDMJl2SrL-TM/exec -->
