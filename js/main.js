@@ -26,7 +26,7 @@ function cek() {
 }
 
 // titlemarquee
-title = "Selamat Hari Raya Idul Fitri. Mohon Maaf Lahir Dan Batin.";
+title = "| Selamat Hari Raya Idul Fitri 2021 M / 1442 H. Mohon Maaf Lahir Dan Batin |";
 function step() {
   title = title.substr(1) + title.substr(0, 1);
   document.title = title.substr(0, 100);
