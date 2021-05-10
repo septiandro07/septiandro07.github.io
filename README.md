@@ -1,1 +1,1 @@
-
+Hanya Kompatibel dengan desktop.
